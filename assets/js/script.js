@@ -1,11 +1,7 @@
 'use strict';
 
-
-
 // element toggle function
 const elementToggleFunc = function (elem) { elem.classList.toggle("active"); }
-
-
 
 // sidebar variables
 const sidebar = document.querySelector("[data-sidebar]");
@@ -14,9 +10,6 @@ const sidebarBtn = document.querySelector("[data-sidebar-btn]");
 // sidebar toggle functionality for mobile
 sidebarBtn.addEventListener("click", function () { elementToggleFunc(sidebar); });
 
-
-
-// testimonials variables
 const testimonialsItem = document.querySelectorAll("[data-testimonials-item]");
 const modalContainer = document.querySelector("[data-modal-container]");
 const modalCloseBtn = document.querySelector("[data-modal-close-btn]");
@@ -52,8 +45,6 @@ for (let i = 0; i < testimonialsItem.length; i++) {
 // add click event to modal close button
 modalCloseBtn.addEventListener("click", testimonialsModalFunc);
 overlay.addEventListener("click", testimonialsModalFunc);
-
-
 
 // custom select variables
 const select = document.querySelector("[data-select]");
@@ -113,8 +104,6 @@ for (let i = 0; i < filterBtn.length; i++) {
 
 }
 
-
-
 // contact form variables
 const form = document.querySelector("[data-form]");
 const formInputs = document.querySelectorAll("[data-form-input]");
@@ -133,8 +122,6 @@ for (let i = 0; i < formInputs.length; i++) {
 
   });
 }
-
-
 
 // page navigation variables
 const navigationLinks = document.querySelectorAll("[data-nav-link]");
@@ -157,3 +144,53 @@ for (let i = 0; i < navigationLinks.length; i++) {
 
   });
 }
+
+/* ---------- project modal (cali / hiking) ---------- */
+(() => {
+  const modal   = document.querySelector("[data-project-modal]");
+  const closeBt = document.querySelector("[data-project-close]");
+  const overlay = document.querySelector("[data-project-overlay]");
+  const titleEl = document.querySelector("[data-project-title]");
+  const textEl  = document.querySelector("[data-project-text]");
+  const tagsEl  = document.querySelector("[data-project-tags]");
+
+  if (!modal || !closeBt || !overlay || !titleEl || !textEl || !tagsEl) return;
+
+  const projects = {
+    cali: {
+      title: "Cali — Outdoor Calisthenics Finder",
+      text:
+        "Cali helps people discover outdoor calisthenics parks and equipment nearby. " +
+        "Planned features: searchable map with filters, user-submitted locations, ratings/reviews, and photos. " +
+        "Built to make bodyweight fitness more accessible.",
+      tags: ["React", "Node/Express", "MongoDB", "Map APIs", "Auth (planned)"]
+    },
+    hiking: {
+      title: "TrailSafe — Hiking Safety Companion",
+      text:
+        "A safety-focused hiking application that uses real-time movement monitoring and anomaly detection to trigger intelligent SOS alerts if users become unresponsive. Designed with Firebase for authentication and cloud services, and TensorFlow Lite for lightweight ML on-device analysis. ",
+      tags: ["React", "Node.js", "Firebase", "Geolocation", "Tensorflow", "REST APIs"]
+    }
+  };
+
+  function openModal(key) {
+    const data = projects[key];
+    if (!data) return;
+    titleEl.textContent = data.title;
+    textEl.textContent  = data.text;
+    tagsEl.innerHTML    = data.tags.map(t => `<li>#${t}</li>`).join("");
+    modal.classList.add("active");
+    document.body.style.overflow = "hidden";
+  }
+
+  function closeModal() {
+    modal.classList.remove("active");
+    document.body.style.overflow = "";
+  }
+
+  document.querySelectorAll("[data-project]").forEach(btn => {
+    btn.addEventListener("click", () => openModal(btn.getAttribute("data-project")));
+  });
+  closeBt.addEventListener("click", closeModal);
+  overlay.addEventListener("click", closeModal);
+})();

@@ -1,44 +1,42 @@
-# vCard - Personal portfolio
+# Matthew O'Mara — Portfolio Website
 
-![GitHub repo size](https://img.shields.io/github/repo-size/codewithsadee/vcard-personal-portfolio)
-![GitHub stars](https://img.shields.io/github/stars/codewithsadee/vcard-personal-portfolio?style=social)
-![GitHub forks](https://img.shields.io/github/forks/codewithsadee/vcard-personal-portfolio?style=social)
-[![Twitter Follow](https://img.shields.io/twitter/follow/codewithsadee_?style=social)](https://twitter.com/intent/follow?screen_name=codewithsadee_)
-[![YouTube Video Views](https://img.shields.io/youtube/views/SoxmIlgf2zM?style=social)](https://youtu.be/SoxmIlgf2zM)
+This is my personal developer portfolio showcasing my projects, technical skills, and experience.  
+The website is built as a responsive, single-page portfolio with smooth navigation, project highlights, and a functional contact form.
 
-vCard is a fully responsive personal portfolio website, responsive for all devices, built using HTML, CSS, and JavaScript.
+## 🌐 Live Demo
+[Visit Portfolio](https://your-portfolio-link.com) 
 
-## Demo
+---
 
-![vCard Desktop Demo](./website-demo-image/desktop.png "Desktop Demo")
-![vCard Mobile Demo](./website-demo-image/mobile.png "Mobile Demo")
+## ✨ Features
+- **Responsive Design**: Optimized for desktop and mobile.
+- **Interactive Navigation**: Smooth transitions between About, Resume, Portfolio, and Contact pages.
+- **Project Highlights**: Dedicated project cards with popups for stack and features.
+- **Contact Form**: Integrated form with validation and Formspree support for quick inquiries.
+- **Dark Theme**: Sleek and modern design aesthetic.
 
-## Prerequisites
+---
 
-Before you begin, ensure you have met the following requirements:
+## 🛠️ Tech Stack
+**Frontend**
+- HTML5, CSS3, JavaScript (ES6+)
+- React.js (for interactivity if SPA setup) / Vanilla JS (if static)
+- TailwindCSS (or custom SCSS)
 
-* [Git](https://git-scm.com/downloads "Download Git") must be installed on your operating system.
+**Tools & Deployment**
+- GitHub Pages / Vercel / Netlify
+- Formspree (for contact form handling)
+- Google Maps Embed API (Contact section map)
 
-## Installing vCard
+---
 
-To install **vCard**, follow these steps:
+## 📂 Project Sections
 
-Linux and macOS:
+- **EcoNav** — Gas cost route optimizer with real-time traffic, fuel price APIs, and Leaflet maps.  
+- **Cali** — A community-curated outdoor calisthenics gym locator with reviews and geolocation.  
+- **TrailSafe** — Safety-first hiking app with SOS anomaly detection and Firebase backend.  
+- **Data Analysis & Prediction App** — ML web app using Streamlit, scikit-learn, and Pandas.  
 
-```bash
-sudo git clone https://github.com/codewithsadee/vcard-personal-portfolio.git
-```
+Each project popup includes descriptions, key features, and tech tags.
 
-Windows:
-
-```bash
-git clone https://github.com/codewithsadee/vcard-personal-portfolio.git
-```
-
-## Contact
-
-If you want to contact me you can reach me at [Twitter](https://www.x.com/codewithsadee_).
-
-## License
-
-MIT
+---
